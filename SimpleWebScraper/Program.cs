@@ -3,8 +3,11 @@ using HtmlAgilityPack;
 using SimpleWebScraper;
 using CsvHelper;
 using System.Globalization;
+using HtmlAgilityPack.CssSelectors.NetCore;
 
 var web = new HtmlWeb();
+// setting a global User-Agent header in HAP 
+web.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
 var document = web.Load("https://www.scrapingcourse.com/ecommerce/");
 var products = new List<Product>();
 
